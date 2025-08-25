@@ -1,0 +1,43 @@
+[project]
+name = "musiclive"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Your Name",email = "you@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi (>=0.116.1,<0.117.0)",
+    "uvicorn[standard] (>=0.35.0,<0.36.0)",
+    "httpx (>=0.28.1,<0.29.0)",
+    "selectolax (>=0.3.33,<0.4.0)",
+    "psycopg[binary] (>=3.2.9,<4.0.0)",
+    "python-dotenv (>=1.1.1,<2.0.0)",
+    "structlog (>=25.4.0,<26.0.0)",
+    "playwright (>=1.54.0,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+pytest-asyncio = "^1.1.0"
+ruff = "^0.12.10"
+black = "^25.1.0"
+types-requests = "^2.32.4.20250809"
+
+
+[tool.poetry.scripts]
+api = "uvicorn:main"  # not used; we’ll run with uvicorn cmd
+collector = "collector.cli:main"
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
