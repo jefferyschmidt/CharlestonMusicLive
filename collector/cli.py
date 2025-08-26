@@ -15,7 +15,7 @@ project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
 from collector.extractors.sample_venue import SampleVenueExtractor
-from collector.extractors.music_farm import MusicFarmExtractor
+from collector.extractors.adaptive_venue import AdaptiveVenueExtractor
 from collector.extractors.base import ExtractResult
 from db.persistence import get_connection, ensure_site, ensure_source, upsert_venue, insert_event_instance, upsert_event_source_link
 from collector.intelligent_crawler import run_intelligent_crawl, discover_and_crawl_sources
@@ -27,11 +27,8 @@ def parse_html_file(file_path: str, site_slug: str, source_url: str) -> List[Ext
         with open(file_path, 'r', encoding='utf-8') as f:
             html_content = f.read()
         
-        # Choose extractor based on file path or content
-        if "music_farm" in file_path:
-            extractor = MusicFarmExtractor(site_slug=site_slug, source_url=source_url)
-        else:
-            extractor = SampleVenueExtractor(site_slug=site_slug, source_url=source_url)
+        # Use adaptive extractor for all venues
+        extractor = AdaptiveVenueExtractor(site_slug=site_slug, source_url=source_url)
         
         results = extractor.parse(html_content)
         return results

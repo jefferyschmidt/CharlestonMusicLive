@@ -320,20 +320,112 @@ async def health_check():
         conn = get_connection()
         conn.close()
         
+        # Check system resources
+        import psutil
+        memory = psutil.virtual_memory()
+        disk = psutil.disk_usage('/')
+        
+        # Check crawler status
+        crawler_status_info = {
+            "is_running": crawler_status.get("is_running", False),
+            "current_progress": crawler_status.get("current_progress", {}),
+            "last_activity": crawler_status.get("last_activity", "Never")
+        }
+        
         return {
             "status": "healthy",
             "timestamp": datetime.now().isoformat(),
             "database": "connected",
-            "crawler": "ready"
+            "version": "1.0.0",
+            "system": {
+                "memory_percent": memory.percent,
+                "disk_percent": disk.percent,
+                "cpu_percent": psutil.cpu_percent(interval=1)
+            },
+            "crawler": crawler_status_info
         }
     except Exception as e:
         return {
             "status": "unhealthy",
             "timestamp": datetime.now().isoformat(),
             "database": "disconnected",
-            "crawler": "error",
-            "error": str(e)
+            "error": str(e),
+            "version": "1.0.0"
         }
+
+@app.get("/api/metrics")
+async def get_metrics():
+    """Get system metrics and performance data."""
+    try:
+        os.environ['DATABASE_URL'] = "postgresql://musiclive:npg_wopeP92YbXft@ep-curly-hat-ad4vut3o-pooler.c-2.us-east-1.aws.neon.tech/musiclive?sslmode=require&channel_binding=require"
+        
+        conn = get_connection()
+        
+        with conn.cursor() as cur:
+            # Get event counts by date
+            cur.execute("""
+                SELECT DATE(created_at) as date, COUNT(*) as count
+                FROM event_instance
+                WHERE created_at >= NOW() - INTERVAL '30 days'
+                GROUP BY DATE(created_at)
+                ORDER BY date DESC
+                LIMIT 30
+            """)
+            daily_events = cur.fetchall()
+            
+            # Get venue counts
+            cur.execute("SELECT COUNT(*) FROM venue")
+            total_venues = cur.fetchone()[0]
+            
+            # Get source counts
+            cur.execute("SELECT COUNT(*) FROM source")
+            total_sources = cur.fetchone()[0]
+            
+            # Get artist counts
+            cur.execute("SELECT COUNT(*) FROM artist")
+            total_artists = cur.fetchone()[0]
+            
+            # Get recent crawl activity
+            cur.execute("""
+                SELECT COUNT(*) as count, 
+                       AVG(EXTRACT(EPOCH FROM (finished_at - started_at))) as avg_duration
+                FROM ingest_run
+                WHERE started_at >= NOW() - INTERVAL '7 days'
+                AND status = 'completed'
+            """)
+            recent_crawls = cur.fetchone()
+            
+        conn.close()
+        
+        # System metrics
+        import psutil
+        memory = psutil.virtual_memory()
+        disk = psutil.disk_usage('/')
+        
+        return {
+            "timestamp": datetime.now().isoformat(),
+            "system": {
+                "memory_percent": memory.percent,
+                "disk_percent": disk.percent,
+                "cpu_percent": psutil.cpu_percent(interval=1)
+            },
+            "database": {
+                "total_events": sum(row[1] for row in daily_events),
+                "total_venues": total_venues,
+                "total_sources": total_sources,
+                "total_artists": total_artists,
+                "daily_events": [{"date": str(row[0]), "count": row[1]} for row in daily_events]
+            },
+            "crawler": {
+                "recent_crawls": recent_crawls[0] if recent_crawls[0] else 0,
+                "avg_crawl_duration": recent_crawls[1] if recent_crawls[1] else 0,
+                "current_status": crawler_status
+            }
+        }
+        
+    except Exception as e:
+        logger.error(f"Error getting metrics: {e}")
+        return {"error": str(e)}
 
 @app.get("/api/stats")
 async def get_stats():
@@ -392,6 +484,200 @@ async def get_stats():
             "total_artists": 0,
             "total_sources": 0
         }
+
+@app.get("/api/events")
+async def get_events(
+    venue_id: Optional[int] = None,
+    artist_name: Optional[str] = None,
+    date_from: Optional[str] = None,
+    date_to: Optional[str] = None,
+    limit: int = 50,
+    offset: int = 0
+):
+    """Get events with filtering and pagination."""
+    try:
+        os.environ['DATABASE_URL'] = "postgresql://musiclive:npg_wopeP92YbXft@ep-curly-hat-ad4vut3o-pooler.c-2.us-east-1.aws.neon.tech/musiclive?sslmode=require&channel_binding=require"
+        
+        conn = get_connection()
+        
+        # Build query with filters
+        query = """
+            SELECT e.id, e.title, e.artist_name, e.starts_at_utc, e.ends_at_utc, 
+                   e.price_min, e.price_max, e.currency, e.ticket_url, e.age_restriction,
+                   v.name as venue_name, v.city, v.state
+            FROM event_instance e
+            JOIN venue v ON e.venue_id = v.id
+            WHERE 1=1
+        """
+        params = []
+        
+        if venue_id:
+            query += " AND e.venue_id = %s"
+            params.append(venue_id)
+        
+        if artist_name:
+            query += " AND e.artist_name ILIKE %s"
+            params.append(f"%{artist_name}%")
+        
+        if date_from:
+            query += " AND e.starts_at_utc >= %s"
+            params.append(date_from)
+        
+        if date_to:
+            query += " AND e.starts_at_utc <= %s"
+            params.append(date_to)
+        
+        # Add pagination
+        query += " ORDER BY e.starts_at_utc ASC LIMIT %s OFFSET %s"
+        params.extend([limit, offset])
+        
+        with conn.cursor() as cur:
+            cur.execute(query, params)
+            events = cur.fetchall()
+            
+            # Get total count for pagination
+            count_query = query.replace("SELECT e.id, e.title", "SELECT COUNT(*)").split("ORDER BY")[0]
+            cur.execute(count_query, params[:-2] if len(params) > 2 else params)
+            total_count = cur.fetchone()[0]
+        
+        conn.close()
+        
+        return {
+            "events": [
+                {
+                    "id": event[0],
+                    "title": event[1],
+                    "artist_name": event[2],
+                    "starts_at_utc": event[3],
+                    "ends_at_utc": event[4],
+                    "price_min": event[5],
+                    "price_max": event[6],
+                    "currency": event[7],
+                    "ticket_url": event[8],
+                    "age_restriction": event[9],
+                    "venue_name": event[10],
+                    "city": event[11],
+                    "state": event[12]
+                } for event in events
+            ],
+            "pagination": {
+                "total": total_count,
+                "limit": limit,
+                "offset": offset,
+                "has_more": offset + limit < total_count
+            }
+        }
+        
+    except Exception as e:
+        logger.error(f"Error getting events: {e}")
+        return {"events": [], "pagination": {"total": 0, "limit": limit, "offset": offset, "has_more": False}}
+
+@app.get("/api/events/{event_id}")
+async def get_event_detail(event_id: int):
+    """Get detailed information about a specific event."""
+    try:
+        os.environ['DATABASE_URL'] = "postgresql://musiclive:npg_wopeP92YbXft@ep-curly-hat-ad4vut3o-pooler.c-2.us-east-1.aws.neon.tech/musiclive?sslmode=require&channel_binding=require"
+        
+        conn = get_connection()
+        
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT e.id, e.title, e.artist_name, e.starts_at_utc, e.ends_at_utc, 
+                       e.price_min, e.price_max, e.currency, e.ticket_url, e.age_restriction,
+                       e.is_cancelled, e.created_at, e.updated_at,
+                       v.name as venue_name, v.address_line1, v.city, v.state, v.postal_code,
+                       v.latitude, v.longitude, v.tz_name
+                FROM event_instance e
+                JOIN venue v ON e.venue_id = v.id
+                WHERE e.id = %s
+            """, (event_id,))
+            
+            event = cur.fetchone()
+            
+            if not event:
+                raise HTTPException(status_code=404, detail="Event not found")
+        
+        conn.close()
+        
+        return {
+            "id": event[0],
+            "title": event[1],
+            "artist_name": event[2],
+            "starts_at_utc": event[3],
+            "ends_at_utc": event[4],
+            "price_min": event[5],
+            "price_max": event[6],
+            "currency": event[7],
+            "ticket_url": event[8],
+            "age_restriction": event[9],
+            "is_cancelled": event[10],
+            "created_at": event[11],
+            "updated_at": event[12],
+            "venue": {
+                "name": event[13],
+                "address_line1": event[14],
+                "city": event[15],
+                "state": event[16],
+                "postal_code": event[17],
+                "latitude": event[18],
+                "longitude": event[19],
+                "tz_name": event[20]
+            }
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error getting event detail: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+@app.get("/api/search")
+async def search_events(
+    q: str,
+    limit: int = 20
+):
+    """Search events by title, artist, or venue name."""
+    try:
+        os.environ['DATABASE_URL'] = "postgresql://musiclive:npg_wopeP92YbXft@ep-curly-hat-ad4vut3o-pooler.c-2.us-east-1.aws.neon.tech/musiclive?sslmode=require&channel_binding=require"
+        
+        conn = get_connection()
+        
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT e.id, e.title, e.artist_name, e.starts_at_utc, e.price_min, e.price_max,
+                       v.name as venue_name, v.city, v.state
+                FROM event_instance e
+                JOIN venue v ON e.venue_id = v.id
+                WHERE e.title ILIKE %s OR e.artist_name ILIKE %s OR v.name ILIKE %s
+                ORDER BY e.starts_at_utc ASC
+                LIMIT %s
+            """, (f"%{q}%", f"%{q}%", f"%{q}%", limit))
+            
+            events = cur.fetchall()
+        
+        conn.close()
+        
+        return {
+            "query": q,
+            "results": [
+                {
+                    "id": event[0],
+                    "title": event[1],
+                    "artist_name": event[2],
+                    "starts_at_utc": event[3],
+                    "price_min": event[4],
+                    "price_max": event[5],
+                    "venue_name": event[6],
+                    "city": event[7],
+                    "state": event[8]
+                } for event in events
+            ],
+            "total_results": len(events)
+        }
+        
+    except Exception as e:
+        logger.error(f"Error searching events: {e}")
+        return {"query": q, "results": [], "total_results": 0}
 
 @app.get("/api/crawl-history")
 async def get_crawl_history():

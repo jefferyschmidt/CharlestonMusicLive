@@ -327,11 +327,65 @@ class ArtistResearcher:
                 # Could analyze Spotify genre data if API access available
                 pass
             
-            return genres[:3]  # Limit to top 3 genres
+            # Strategy 4: AI-powered genre classification
+            ai_genres = await self._ai_genre_classification(artist_name, event_context)
+            if ai_genres:
+                genres.extend(ai_genres)
+            
+            return list(set(genres))[:3]  # Remove duplicates and limit to top 3 genres
             
         except Exception as e:
             logger.debug(f"Error classifying genre for {artist_name}: {e}")
             return genres
+    
+    async def _ai_genre_classification(self, artist_name: str, event_context: Dict[str, Any] = None) -> List[str]:
+        """Use AI to classify artist genre based on name and context."""
+        try:
+            # This would integrate with an AI service like OpenAI or Anthropic
+            # For now, we'll use a simple heuristic approach
+            
+            context_text = ""
+            if event_context:
+                context_text = f"Venue: {event_context.get('venue_name', '')} "
+                context_text += f"Title: {event_context.get('title', '')}"
+            
+            # Simple keyword-based classification with context
+            artist_lower = artist_name.lower()
+            context_lower = context_text.lower()
+            
+            # Enhanced genre detection
+            genre_matches = []
+            
+            # Rock/Metal detection
+            rock_keywords = ['rock', 'metal', 'punk', 'grunge', 'hardcore', 'emo', 'indie']
+            if any(keyword in artist_lower or keyword in context_lower for keyword in rock_keywords):
+                genre_matches.append('Rock')
+            
+            # Electronic detection
+            electronic_keywords = ['electronic', 'edm', 'techno', 'house', 'trance', 'dubstep', 'ambient']
+            if any(keyword in artist_lower or keyword in context_lower for keyword in electronic_keywords):
+                genre_matches.append('Electronic')
+            
+            # Jazz/Blues detection
+            jazz_keywords = ['jazz', 'blues', 'soul', 'r&b', 'funk', 'gospel']
+            if any(keyword in artist_lower or keyword in context_lower for keyword in jazz_keywords):
+                genre_matches.append('Jazz/Blues')
+            
+            # Country/Folk detection
+            country_keywords = ['country', 'folk', 'bluegrass', 'americana', 'alt-country']
+            if any(keyword in artist_lower or keyword in context_lower for keyword in country_keywords):
+                genre_matches.append('Country/Folk')
+            
+            # Pop detection
+            pop_keywords = ['pop', 'dance', 'disco', 'reggae', 'hip-hop', 'rap']
+            if any(keyword in artist_lower or keyword in context_lower for keyword in pop_keywords):
+                genre_matches.append('Pop')
+            
+            return genre_matches
+            
+        except Exception as e:
+            logger.debug(f"Error in AI genre classification for {artist_name}: {e}")
+            return []
     
     async def batch_research_artists(self, artist_names: List[str], event_contexts: List[Dict[str, Any]] = None) -> List[ArtistInfo]:
         """Research multiple artists in parallel."""

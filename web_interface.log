@@ -1,0 +1,2089 @@
+INFO:     Started server process [71588]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:__main__:Getting crawl history...
+INFO:__main__:Database URL set for crawl history
+INFO:__main__:Database connection established for crawl history
+INFO:     127.0.0.1:62232 - "GET /api/crawl-history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62250 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62251 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62263 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62264 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62294 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62295 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62313 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62314 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62314 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62314 - "POST /api/crawl HTTP/1.1" 200 OK
+INFO:__main__:Starting background crawl for Charleston, SC
+INFO:collector.discovery.source_discoverer:Starting direct venue discovery...
+INFO:     127.0.0.1:62314 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62314 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62326 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62326 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62326 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62332 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62332 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62332 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62339 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62339 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62343 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62345 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62345 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62345 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62352 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62352 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62360 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62362 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62362 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62362 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62367 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62367 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62367 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62371 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62371 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62371 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62389 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62389 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62389 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62394 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62394 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62394 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62398 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62398 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62398 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62404 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.discovery.source_discoverer:Starting search engine discovery...
+INFO:collector.discovery.source_discoverer:Skipping search engine discovery - all major engines are blacklisted or require API keys
+INFO:collector.discovery.source_discoverer:Starting aggregator discovery...
+INFO:collector.discovery.source_discoverer:Starting cross-reference discovery...
+INFO:     127.0.0.1:62404 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62404 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62421 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62421 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62421 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62433 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.intelligent_crawler:Starting intelligent crawl for Charleston, SC
+INFO:collector.intelligent_crawler:Phase 1: Discovering event sources...
+INFO:collector.discovery.source_discoverer:Starting direct venue discovery...
+INFO:     127.0.0.1:62433 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62433 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62450 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62450 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62450 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62457 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62457 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62457 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62461 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62461 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62461 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62467 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62467 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62467 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62472 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62472 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62476 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62478 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62478 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62478 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62499 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62499 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62499 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62523 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62523 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62523 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62528 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62528 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62528 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62533 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62533 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62533 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62539 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.discovery.source_discoverer:Starting search engine discovery...
+INFO:collector.discovery.source_discoverer:Skipping search engine discovery - all major engines are blacklisted or require API keys
+INFO:collector.discovery.source_discoverer:Starting aggregator discovery...
+INFO:     127.0.0.1:62539 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.discovery.source_discoverer:Starting cross-reference discovery...
+INFO:     127.0.0.1:62539 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62553 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62553 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.intelligent_crawler:Discovered 14 potential sources
+INFO:collector.intelligent_crawler:Storing discovered sources in database...
+INFO:collector.intelligent_crawler:Stored source: Charleston Venue (https://www.theroyalamerican.com/schedule)
+INFO:collector.intelligent_crawler:Stored source: Charleston Events (https://www.eventbrite.com/d/Charleston--SC/live-music/)
+INFO:collector.intelligent_crawler:Stored source: Charleston Events (https://www.bandsintown.com/?location=Charleston%2CSC)
+INFO:collector.intelligent_crawler:Stored source: Charleston Venue (https://www.musicfarm.com/calendar)
+INFO:collector.intelligent_crawler:Stored source: Charleston Venue (https://www.charlestonmusichall.com/calendar)
+INFO:collector.intelligent_crawler:Stored source: Charleston Events (https://www.songkick.com/search?query=Charleston%2CSC)
+INFO:collector.intelligent_crawler:Stored source: Cross-referenced (https://www.eventbrite.com/organizer/features/sell-tickets/)
+INFO:collector.intelligent_crawler:Stored source: Cross-referenced (https://www.musicfarm.com/calendar/)
+INFO:collector.intelligent_crawler:Stored source: Cross-referenced (https://www.charlestonmusichall.com/calendar/)
+INFO:collector.intelligent_crawler:Stored source: Cross-referenced (https://www.theroyalamerican.com/schedule/barney-cortez-9-13-25)
+INFO:collector.intelligent_crawler:Stored source: Cross-referenced (https://www.musicfarm.com/partially-seated/)
+INFO:collector.intelligent_crawler:Stored source: Cross-referenced (https://www.eventbrite.com/signin/signup/?referrer=%2Fmytickets)
+INFO:collector.intelligent_crawler:Stored source: Cross-referenced (https://www.charlestonmusichall.com/venue-rental/)
+INFO:collector.intelligent_crawler:Stored source: Cross-referenced (https://www.musicfarm.com/venue-rental/)
+INFO:collector.intelligent_crawler:Phase 2: Filtering and prioritizing sources...
+INFO:collector.intelligent_crawler:Phase 3: Crawling sources...
+INFO:collector.intelligent_crawler:Crawling source 1/14: Charleston Venue (https://www.theroyalamerican.com/schedule)
+INFO:collector.extractors.adaptive_venue:Found 63 event containers using pattern matching
+INFO:collector.extractors.adaptive_venue:Learned extraction patterns for https://www.theroyalamerican.com/schedule
+INFO:collector.extractors.adaptive_venue:Adaptive extractor found 63 events from https://www.theroyalamerican.com/schedule
+INFO:collector.intelligent_crawler:🎵 Researching 55 artists from events
+INFO:collector.artist_researcher:🔍 Researching artist: Wilmot
+INFO:collector.artist_researcher:🔍 Researching artist: Channel Bluff
+INFO:collector.artist_researcher:🔍 Researching artist: Pip The Pansy
+INFO:collector.artist_researcher:🔍 Researching artist: An Evening With Wolf Mask
+INFO:collector.artist_researcher:🔍 Researching artist: Thrifters & Drifters Market
+INFO:collector.artist_researcher:🌐 Found official website: https://www.pipthepansy.com
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/pipthepansy
+INFO:collector.artist_researcher:🌐 Found official website: https://www.wilmot.com
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/pipthepansy
+INFO:     127.0.0.1:62553 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62587 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/pipthepansy
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/wilmot
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/wilmot
+INFO:collector.artist_researcher:✅ Completed research for Pip The Pansy (confidence: 0.70)
+INFO:collector.artist_researcher:✅ Completed research for Wilmot (confidence: 0.70)
+INFO:     127.0.0.1:62587 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62609 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62611 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62611 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62611 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62617 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62617 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62625 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/aneveningwithwolfmask
+INFO:     127.0.0.1:62627 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for An Evening With Wolf Mask (confidence: 0.20)
+INFO:     127.0.0.1:62627 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62627 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62647 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/channelbluff
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/thrifters&driftersmarket
+INFO:collector.artist_researcher:✅ Completed research for Channel Bluff (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for Thrifters & Drifters Market (confidence: 0.20)
+INFO:     127.0.0.1:62647 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:🔍 Researching artist: Winterteeth
+INFO:collector.artist_researcher:🔍 Researching artist: Tyler Ramsey
+INFO:collector.artist_researcher:🔍 Researching artist: Barney Cortez
+INFO:collector.artist_researcher:🔍 Researching artist: The Ocho
+INFO:collector.artist_researcher:🔍 Researching artist: Maraluso
+INFO:collector.artist_researcher:🌐 Found official website: https://www.tylerramsey.com
+INFO:collector.artist_researcher:🌐 Found official website: https://www.winterteeth.com
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/winterteeth
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/tylerramsey
+INFO:collector.artist_researcher:🌐 Found official website: https://www.barneycortez.net
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/barney.cortez
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/winterteeth
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/tylerramsey
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/tylerramsey
+INFO:collector.artist_researcher:✅ Completed research for Tyler Ramsey (confidence: 0.80)
+INFO:collector.artist_researcher:✅ Completed research for Winterteeth (confidence: 0.70)
+INFO:collector.artist_researcher:✅ Completed research for Barney Cortez (confidence: 0.70)
+INFO:     127.0.0.1:62647 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62689 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62689 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62689 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62696 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62696 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62696 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62703 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62703 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:🌐 Found official website: https://www.theocho.net
+INFO:     127.0.0.1:62703 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62712 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/theocho
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/theocho
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/theocho
+INFO:collector.artist_researcher:✅ Completed research for The Ocho (confidence: 0.80)
+INFO:     127.0.0.1:62712 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62712 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62740 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/maraluso
+INFO:collector.artist_researcher:✅ Completed research for Maraluso (confidence: 0.20)
+INFO:collector.artist_researcher:🔍 Researching artist: Holy City Vintage Market
+INFO:collector.artist_researcher:🔍 Researching artist: Five Door Sedan
+INFO:collector.artist_researcher:🔍 Researching artist: Gritty Flyright
+INFO:collector.artist_researcher:🔍 Researching artist: Meredith Foster
+INFO:collector.artist_researcher:🔍 Researching artist: Quelle the Prophet
+INFO:collector.artist_researcher:🌐 Found official website: https://www.grittyflyright.com
+INFO:collector.artist_researcher:🌐 Found official website: https://www.fivedoorsedan.com
+INFO:collector.artist_researcher:🌐 Found official website: https://meredithfoster.com
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/meredithfoster
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/grittyflyright
+INFO:     127.0.0.1:62740 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/meredithfoster
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/fivedoorsedan
+INFO:collector.artist_researcher:✅ Completed research for Meredith Foster (confidence: 0.70)
+INFO:collector.artist_researcher:✅ Completed research for Five Door Sedan (confidence: 0.70)
+INFO:collector.artist_researcher:✅ Completed research for Gritty Flyright (confidence: 0.80)
+INFO:     127.0.0.1:62740 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62774 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62774 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62774 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62779 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62774 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62795 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62797 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62797 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62797 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62806 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62806 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/holycityvintagemarket
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/quelletheprophet
+INFO:collector.artist_researcher:✅ Completed research for Holy City Vintage Market (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for Quelle the Prophet (confidence: 0.20)
+INFO:     127.0.0.1:62849 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62850 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:🔍 Researching artist: Hotel Hugo
+INFO:collector.artist_researcher:🔍 Researching artist: Kenny George Band
+INFO:collector.artist_researcher:🔍 Researching artist: CHS Underground Presents
+INFO:collector.artist_researcher:🔍 Researching artist: Homemade Haircuts
+INFO:collector.artist_researcher:🔍 Researching artist: 5th Annual Boogieman Halloween Festival
+INFO:     127.0.0.1:62862 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62862 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62865 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/hotel.hugo
+INFO:     127.0.0.1:62865 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for Hotel Hugo (confidence: 0.20)
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/kennygeorgeband
+INFO:     127.0.0.1:62865 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62894 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/kennygeorgeband
+INFO:collector.artist_researcher:✅ Completed research for Kenny George Band (confidence: 0.20)
+INFO:     127.0.0.1:62894 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62902 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62904 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/homemadehaircuts
+INFO:     127.0.0.1:62904 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for Homemade Haircuts (confidence: 0.20)
+INFO:     127.0.0.1:62904 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62922 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62922 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/chsundergroundpresents
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/5thannualboogiemanhalloweenfestival
+INFO:collector.artist_researcher:✅ Completed research for CHS Underground Presents (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for 5th Annual Boogieman Halloween Festival (confidence: 0.20)
+INFO:collector.artist_researcher:🔍 Researching artist: Weekend Friend
+INFO:collector.artist_researcher:🔍 Researching artist: Lightwatch
+INFO:collector.artist_researcher:🔍 Researching artist: TWEN
+INFO:collector.artist_researcher:🔍 Researching artist: French Cassettes
+INFO:collector.artist_researcher:🔍 Researching artist: The Simplicity + Tennis Courts
+INFO:     127.0.0.1:62922 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62940 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:🌐 Found official website: https://lightwatch.net
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/lightwatch
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/lightwatch
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/lightwatch
+INFO:collector.artist_researcher:✅ Completed research for Lightwatch (confidence: 0.80)
+INFO:     127.0.0.1:62940 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62940 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62961 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/weekend.friend
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/weekendfriend
+INFO:     127.0.0.1:62940 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for Weekend Friend (confidence: 0.20)
+INFO:     127.0.0.1:62940 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62978 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/twen
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/twen
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/frenchcassettes
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/twen
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/twen
+INFO:collector.artist_researcher:✅ Completed research for TWEN (confidence: 0.30)
+INFO:     127.0.0.1:62978 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/frenchcassettes
+INFO:collector.artist_researcher:✅ Completed research for French Cassettes (confidence: 0.20)
+INFO:     127.0.0.1:62978 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62995 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62995 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62995 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:62999 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/thesimplicity+tenniscourts
+INFO:     127.0.0.1:62995 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for The Simplicity + Tennis Courts (confidence: 0.20)
+INFO:collector.artist_researcher:🔍 Researching artist: Supper Club
+INFO:collector.artist_researcher:🔍 Researching artist: Local Nomad
+INFO:collector.artist_researcher:🔍 Researching artist: Haunters
+INFO:collector.artist_researcher:🔍 Researching artist: The 13th Annual Royal American Biker Oyster Roast
+INFO:collector.artist_researcher:🔍 Researching artist: Brady Sklar
+INFO:collector.artist_researcher:🌐 Found official website: https://www.localnomad.net
+INFO:collector.artist_researcher:🌐 Found official website: https://haunters.net
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/localnomad
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/haunters
+INFO:     127.0.0.1:62995 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63043 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/localnomad
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/haunters
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/localnomad
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/haunters
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/haunters
+INFO:collector.artist_researcher:✅ Completed research for Haunters (confidence: 0.80)
+INFO:collector.artist_researcher:✅ Completed research for Local Nomad (confidence: 0.70)
+INFO:     127.0.0.1:63043 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63043 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63062 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/supperclub
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/supperclub
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/supperclub
+INFO:collector.artist_researcher:✅ Completed research for Supper Club (confidence: 0.30)
+INFO:     127.0.0.1:63062 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63062 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63070 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63070 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63070 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63074 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/brady.sklar
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/bradysklar
+INFO:collector.artist_researcher:✅ Completed research for Brady Sklar (confidence: 0.20)
+INFO:     127.0.0.1:63074 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63074 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63100 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/the13thannualroyalamericanbikeroysterroast
+INFO:     127.0.0.1:63100 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for The 13th Annual Royal American Biker Oyster Roast (confidence: 0.20)
+INFO:collector.artist_researcher:🔍 Researching artist: Colors In Corduroy
+INFO:collector.artist_researcher:🔍 Researching artist: Johnny Holliday & The Silver Lining + The Campbell Brown / Jim Rubush Experience
+INFO:collector.artist_researcher:🔍 Researching artist: The Simplicity
+INFO:collector.artist_researcher:🔍 Researching artist: Human Resources + Elijah Johnston
+INFO:collector.artist_researcher:🔍 Researching artist: Groçer
+INFO:collector.artist_researcher:🌐 Found official website: https://www.thesimplicity.com
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/thesimplicity
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/thesimplicity
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/thesimplicity
+INFO:collector.artist_researcher:✅ Completed research for The Simplicity (confidence: 0.70)
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63119 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63121 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63121 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63121 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63131 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63131 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63131 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63143 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63143 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63151 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63153 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63153 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63153 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63161 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/groçer
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/colorsincorduroy
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/humanresources+elijahjohnston
+INFO:collector.artist_researcher:✅ Completed research for Groçer (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for Human Resources + Elijah Johnston (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for Johnny Holliday & The Silver Lining + The Campbell Brown / Jim Rubush Experience (confidence: 0.00)
+INFO:     127.0.0.1:63161 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for Colors In Corduroy (confidence: 0.20)
+INFO:collector.artist_researcher:🔍 Researching artist: Exaggerators
+INFO:collector.artist_researcher:🔍 Researching artist: Impending Joy + The Parris Byars Club
+INFO:collector.artist_researcher:🔍 Researching artist: Abrevity + Anergy
+INFO:collector.artist_researcher:🔍 Researching artist: Droze & The Drift
+INFO:collector.artist_researcher:🔍 Researching artist: 2 Slices
+INFO:     127.0.0.1:63161 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63229 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63229 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63237 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63239 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63239 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/2slices
+INFO:     127.0.0.1:63239 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63254 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/2slices
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/2slices
+INFO:collector.artist_researcher:✅ Completed research for 2 Slices (confidence: 0.30)
+INFO:     127.0.0.1:63254 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63274 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63276 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63276 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63287 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63288 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/impendingjoy+theparrisbyarsclub
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/droze&thedrift
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/abrevity+anergy
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/exaggerators
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/exaggerators
+INFO:collector.artist_researcher:✅ Completed research for Exaggerators (confidence: 0.30)
+INFO:collector.artist_researcher:✅ Completed research for Abrevity + Anergy (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for Impending Joy + The Parris Byars Club (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for Droze & The Drift (confidence: 0.20)
+INFO:collector.artist_researcher:🔍 Researching artist: Rocco & His Bones
+INFO:collector.artist_researcher:🔍 Researching artist: Drook + GLOM
+INFO:collector.artist_researcher:🔍 Researching artist: Loser Chris
+INFO:collector.artist_researcher:🔍 Researching artist: Conner Kelly & The Time Warp
+INFO:collector.artist_researcher:🔍 Researching artist: TOUNDS
+INFO:     127.0.0.1:63288 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:🌐 Found official website: https://www.tounds.com
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/tounds
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/tounds
+INFO:collector.artist_researcher:✅ Completed research for TOUNDS (confidence: 0.70)
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63351 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63353 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63353 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63353 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63363 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63363 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63363 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63370 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63370 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/connerkelly&thetimewarp
+INFO:     127.0.0.1:63370 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63411 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for Conner Kelly & The Time Warp (confidence: 0.20)
+INFO:     127.0.0.1:63411 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/loserchris
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/drook+glom
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/rocco&hisbones
+INFO:     127.0.0.1:63411 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63459 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for Rocco & His Bones (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for Loser Chris (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for Drook + GLOM (confidence: 0.20)
+INFO:collector.artist_researcher:🔍 Researching artist: Slow Funeral + Babe Club
+INFO:collector.artist_researcher:🔍 Researching artist: Nordista Freeze
+INFO:collector.artist_researcher:🔍 Researching artist: Wolfgang Zimmerman
+INFO:collector.artist_researcher:🔍 Researching artist: Cannon Rogers + Homemade Haircuts
+INFO:collector.artist_researcher:🔍 Researching artist: w/ MaralusoDoors: 9pm | $10✯ Shows✯ Cubs✯ Maraluso
+INFO:collector.artist_researcher:🌐 Found official website: https://www.nordistafreeze.com
+INFO:     127.0.0.1:63459 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/nordistafreeze
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/nordistafreeze
+INFO:collector.artist_researcher:✅ Completed research for Nordista Freeze (confidence: 0.80)
+INFO:collector.artist_researcher:✅ Completed research for w/ MaralusoDoors: 9pm | $10✯ Shows✯ Cubs✯ Maraluso (confidence: 0.00)
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63497 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63499 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63499 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63499 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63505 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63499 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63499 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63513 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63513 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63513 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63519 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63519 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/cannonrogers+homemadehaircuts
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/slowfuneral+babeclub
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/wolfgangzimmerman
+INFO:     127.0.0.1:63519 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63558 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/wolfgangzimmerman
+INFO:collector.artist_researcher:✅ Completed research for Wolfgang Zimmerman (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for Slow Funeral + Babe Club (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for Cannon Rogers + Homemade Haircuts (confidence: 0.20)
+INFO:collector.artist_researcher:🔍 Researching artist: North By North
+INFO:collector.artist_researcher:🔍 Researching artist: Semkari
+INFO:collector.artist_researcher:🔍 Researching artist: Dog Days Presents:  The Simplicity (Album Release)
+INFO:collector.artist_researcher:🔍 Researching artist: Kind Hearted Strangers
+INFO:collector.artist_researcher:🔍 Researching artist: The Chums
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/dogdayspresents:thesimplicity(albumrelease)
+INFO:collector.artist_researcher:🌐 Found official website: https://kindheartedstrangers.com
+INFO:collector.artist_researcher:🌐 Found official website: https://www.northbynorth.com
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/northbynorth
+INFO:     127.0.0.1:63558 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/northbynorth
+INFO:collector.artist_researcher:✅ Completed research for Dog Days Presents:  The Simplicity (Album Release) (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for North By North (confidence: 0.70)
+INFO:collector.artist_researcher:✅ Completed research for Kind Hearted Strangers (confidence: 0.60)
+INFO:     127.0.0.1:63558 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63603 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63603 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63603 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63608 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63608 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/thechums
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/thechums
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63627 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63629 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for The Chums (confidence: 0.20)
+INFO:     127.0.0.1:63629 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63629 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63637 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63637 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/semkari
+INFO:     127.0.0.1:63637 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 401
+INFO:__main__:Artists count: 0
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 401, 'total_artists': 0, 'total_sources': 14}
+INFO:     127.0.0.1:63652 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/semkari
+INFO:collector.artist_researcher:✅ Completed research for Semkari (confidence: 0.20)
+INFO:collector.intelligent_crawler:💾 Stored artist: Wilmot (ID: 1)
+INFO:collector.intelligent_crawler:💾 Stored artist: Channel Bluff (ID: 2)
+INFO:collector.intelligent_crawler:💾 Stored artist: Pip The Pansy (ID: 3)
+INFO:collector.intelligent_crawler:💾 Stored artist: An Evening With Wolf Mask (ID: 4)
+INFO:collector.intelligent_crawler:💾 Stored artist: Thrifters & Drifters Market (ID: 5)
+INFO:collector.intelligent_crawler:💾 Stored artist: Winterteeth (ID: 6)
+INFO:collector.intelligent_crawler:💾 Stored artist: Tyler Ramsey (ID: 7)
+INFO:collector.intelligent_crawler:💾 Stored artist: Barney Cortez (ID: 8)
+INFO:collector.intelligent_crawler:💾 Stored artist: The Ocho (ID: 9)
+INFO:collector.intelligent_crawler:💾 Stored artist: Maraluso (ID: 10)
+INFO:collector.intelligent_crawler:💾 Stored artist: Holy City Vintage Market (ID: 11)
+INFO:collector.intelligent_crawler:💾 Stored artist: Five Door Sedan (ID: 12)
+INFO:collector.intelligent_crawler:💾 Stored artist: Gritty Flyright (ID: 13)
+INFO:collector.intelligent_crawler:💾 Stored artist: Meredith Foster (ID: 14)
+INFO:collector.intelligent_crawler:💾 Stored artist: Quelle the Prophet (ID: 15)
+INFO:collector.intelligent_crawler:💾 Stored artist: Hotel Hugo (ID: 16)
+INFO:collector.intelligent_crawler:💾 Stored artist: Kenny George Band (ID: 17)
+INFO:collector.intelligent_crawler:💾 Stored artist: CHS Underground Presents (ID: 18)
+INFO:collector.intelligent_crawler:💾 Stored artist: Homemade Haircuts (ID: 19)
+INFO:collector.intelligent_crawler:💾 Stored artist: 5th Annual Boogieman Halloween Festival (ID: 20)
+INFO:collector.intelligent_crawler:💾 Stored artist: Weekend Friend (ID: 21)
+INFO:collector.intelligent_crawler:💾 Stored artist: Lightwatch (ID: 22)
+INFO:collector.intelligent_crawler:💾 Stored artist: TWEN (ID: 23)
+INFO:collector.intelligent_crawler:💾 Stored artist: French Cassettes (ID: 24)
+INFO:collector.intelligent_crawler:💾 Stored artist: The Simplicity + Tennis Courts (ID: 25)
+INFO:collector.intelligent_crawler:💾 Stored artist: Supper Club (ID: 26)
+INFO:collector.intelligent_crawler:💾 Stored artist: Local Nomad (ID: 27)
+INFO:collector.intelligent_crawler:💾 Stored artist: Haunters (ID: 28)
+INFO:collector.intelligent_crawler:💾 Stored artist: The 13th Annual Royal American Biker Oyster Roast (ID: 29)
+INFO:collector.intelligent_crawler:💾 Stored artist: Brady Sklar (ID: 30)
+INFO:collector.intelligent_crawler:💾 Stored artist: Colors In Corduroy (ID: 31)
+INFO:collector.intelligent_crawler:💾 Stored artist: Johnny Holliday & The Silver Lining + The Campbell Brown / Jim Rubush Experience (ID: 32)
+INFO:collector.intelligent_crawler:💾 Stored artist: The Simplicity (ID: 33)
+INFO:collector.intelligent_crawler:💾 Stored artist: Human Resources + Elijah Johnston (ID: 34)
+INFO:collector.intelligent_crawler:💾 Stored artist: Groçer (ID: 35)
+INFO:collector.intelligent_crawler:💾 Stored artist: Exaggerators (ID: 36)
+INFO:collector.intelligent_crawler:💾 Stored artist: Impending Joy + The Parris Byars Club (ID: 37)
+INFO:collector.intelligent_crawler:💾 Stored artist: Abrevity + Anergy (ID: 38)
+INFO:collector.intelligent_crawler:💾 Stored artist: Droze & The Drift (ID: 39)
+INFO:collector.intelligent_crawler:💾 Stored artist: 2 Slices (ID: 40)
+INFO:collector.intelligent_crawler:💾 Stored artist: Rocco & His Bones (ID: 41)
+INFO:collector.intelligent_crawler:💾 Stored artist: Drook + GLOM (ID: 42)
+INFO:collector.intelligent_crawler:💾 Stored artist: Loser Chris (ID: 43)
+INFO:collector.intelligent_crawler:💾 Stored artist: Conner Kelly & The Time Warp (ID: 44)
+INFO:collector.intelligent_crawler:💾 Stored artist: TOUNDS (ID: 45)
+INFO:collector.intelligent_crawler:💾 Stored artist: Slow Funeral + Babe Club (ID: 46)
+INFO:collector.intelligent_crawler:💾 Stored artist: Nordista Freeze (ID: 47)
+INFO:collector.intelligent_crawler:💾 Stored artist: Wolfgang Zimmerman (ID: 48)
+INFO:collector.intelligent_crawler:💾 Stored artist: Cannon Rogers + Homemade Haircuts (ID: 49)
+INFO:collector.intelligent_crawler:💾 Stored artist: w/ MaralusoDoors: 9pm | $10✯ Shows✯ Cubs✯ Maraluso (ID: 50)
+INFO:collector.intelligent_crawler:💾 Stored artist: North By North (ID: 51)
+INFO:collector.intelligent_crawler:💾 Stored artist: Semkari (ID: 52)
+INFO:collector.intelligent_crawler:💾 Stored artist: Dog Days Presents:  The Simplicity (Album Release) (ID: 53)
+INFO:collector.intelligent_crawler:💾 Stored artist: Kind Hearted Strangers (ID: 54)
+INFO:collector.intelligent_crawler:💾 Stored artist: The Chums (ID: 55)
+INFO:collector.intelligent_crawler:✅ Completed research for 55 artists
+INFO:     127.0.0.1:63652 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63652 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:63665 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.intelligent_crawler:Crawling source 2/14: Charleston Events (https://www.eventbrite.com/d/Charleston--SC/live-music/)
+INFO:collector.extractors.adaptive_venue:Found 52 event containers using pattern matching
+INFO:collector.extractors.adaptive_venue:No events found with pattern matching, trying structural analysis
+INFO:collector.intelligent_crawler:Crawling source 3/14: Charleston Events (https://www.bandsintown.com/?location=Charleston%2CSC)
+INFO:collector.extractors.adaptive_venue:Found 1 event containers using pattern matching
+INFO:collector.extractors.adaptive_venue:No events found with pattern matching, trying structural analysis
+INFO:collector.intelligent_crawler:Crawling source 4/14: Charleston Events (https://www.songkick.com/search?query=Charleston%2CSC)
+INFO:     127.0.0.1:63665 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.extractors.adaptive_venue:Found 33 event containers using pattern matching
+INFO:collector.extractors.adaptive_venue:No events found with pattern matching, trying structural analysis
+INFO:collector.intelligent_crawler:Crawling source 5/14: Charleston Venue (https://www.musicfarm.com/calendar)
+INFO:collector.extractors.adaptive_venue:Found 66 event containers using pattern matching
+INFO:collector.extractors.adaptive_venue:Learned extraction patterns for https://www.musicfarm.com/calendar
+INFO:collector.extractors.adaptive_venue:Adaptive extractor found 55 events from https://www.musicfarm.com/calendar
+INFO:collector.intelligent_crawler:🎵 Researching 55 artists from events
+INFO:collector.artist_researcher:🔍 Researching artist: The Casualties
+INFO:collector.artist_researcher:🔍 Researching artist: Truckfighters
+INFO:collector.artist_researcher:🔍 Researching artist: Wade Bowen
+INFO:collector.artist_researcher:🔍 Researching artist: Bradeazy
+INFO:collector.artist_researcher:🔍 Researching artist: Gimme Gimme Disco
+INFO:collector.artist_researcher:🌐 Found official website: https://www.bradeazy.com
+INFO:collector.artist_researcher:🌐 Found official website: https://www.gimmegimmedisco.com
+INFO:collector.artist_researcher:🌐 Found official website: https://wadebowen.com
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/wadebowen
+INFO:collector.artist_researcher:🌐 Found official website: https://thecasualties.net
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/wadebowen
+INFO:collector.artist_researcher:🌐 Found official website: https://www.truckfighters.com
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/bradeazy
+INFO:     127.0.0.1:63665 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:63723 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/bradeazy
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/wadebowen
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/truckfighters
+INFO:collector.artist_researcher:✅ Completed research for Bradeazy (confidence: 0.70)
+INFO:collector.artist_researcher:✅ Completed research for Wade Bowen (confidence: 0.80)
+INFO:collector.artist_researcher:✅ Completed research for Gimme Gimme Disco (confidence: 0.50)
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/truckfighters
+INFO:collector.artist_researcher:✅ Completed research for The Casualties (confidence: 0.50)
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/truckfighters
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/truckfighters
+INFO:collector.artist_researcher:✅ Completed research for Truckfighters (confidence: 0.80)
+INFO:collector.artist_researcher:🔍 Researching artist: Ordinary Boys
+INFO:collector.artist_researcher:🔍 Researching artist: Angelo The Kid
+INFO:collector.artist_researcher:🔍 Researching artist: Nick Hexum of 311
+INFO:collector.artist_researcher:🔍 Researching artist: Boldy James
+INFO:collector.artist_researcher:🔍 Researching artist: Say Anything: Is a Real Boy
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/sayanything:isarealboy
+INFO:collector.artist_researcher:🌐 Found official website: https://www.ordinaryboys.com
+INFO:     127.0.0.1:63723 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for Say Anything: Is a Real Boy (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for Ordinary Boys (confidence: 0.50)
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:63756 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63758 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63758 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63758 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:63764 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63764 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63764 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:63774 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63774 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/boldy.james
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/boldyjames
+INFO:collector.artist_researcher:✅ Completed research for Boldy James (confidence: 0.20)
+INFO:     127.0.0.1:63774 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:63797 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63797 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/nickhexumof311
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/angelothekid
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/angelothekid
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/angelothekid
+INFO:     127.0.0.1:63797 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:63814 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for Angelo The Kid (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for Nick Hexum of 311 (confidence: 0.20)
+INFO:collector.artist_researcher:🔍 Researching artist: DEBÍ TIRAR MÁS FIESTAS
+INFO:collector.artist_researcher:🔍 Researching artist: WORK IT! 90s/2000s R&B And Hip Hop Night!
+INFO:collector.artist_researcher:🔍 Researching artist: Superheaven
+INFO:collector.artist_researcher:🔍 Researching artist: Allen Stone
+INFO:collector.artist_researcher:🔍 Researching artist: K Camp
+INFO:collector.artist_researcher:🌐 Found official website: https://www.allenstone.com
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/allenstone
+INFO:collector.artist_researcher:🌐 Found official website: https://kcamp.com
+INFO:collector.artist_researcher:🌐 Found official website: https://superheaven.net
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/superheaven
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/kcamp
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/allenstone
+INFO:     127.0.0.1:63814 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/allenstone
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/superheaven
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/kcamp
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/allenstone
+INFO:collector.artist_researcher:✅ Completed research for Allen Stone (confidence: 0.80)
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/superheaven
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/kcamp
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/kcamp
+INFO:collector.artist_researcher:✅ Completed research for Superheaven (confidence: 0.70)
+INFO:collector.artist_researcher:✅ Completed research for K Camp (confidence: 0.80)
+INFO:     127.0.0.1:63814 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:63851 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63851 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63851 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:63859 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63859 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63859 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:63865 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63865 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63865 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:63873 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63873 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/debítirarmásfiestas
+INFO:     127.0.0.1:63873 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:63911 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for DEBÍ TIRAR MÁS FIESTAS (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for WORK IT! 90s/2000s R&B And Hip Hop Night! (confidence: 0.10)
+INFO:collector.artist_researcher:🔍 Researching artist: Michigander
+INFO:collector.artist_researcher:🔍 Researching artist: The Paper Kites
+INFO:collector.artist_researcher:🔍 Researching artist: Crossed Lovers: Signs from the Zodiac
+INFO:collector.artist_researcher:🔍 Researching artist: sombr
+INFO:collector.artist_researcher:🔍 Researching artist: Mannequin Pussy
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/crossedlovers:signsfromthezodiac
+INFO:collector.artist_researcher:🌐 Found official website: https://mannequinpussy.com
+INFO:collector.artist_researcher:🌐 Found official website: https://www.sombr.com
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/mannequinpussy
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/sombr
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/mannequinpussy
+INFO:collector.artist_researcher:✅ Completed research for Crossed Lovers: Signs from the Zodiac (confidence: 0.20)
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/mannequinpussy
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/sombr
+INFO:     127.0.0.1:63911 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for Mannequin Pussy (confidence: 0.70)
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/michigander
+INFO:collector.artist_researcher:✅ Completed research for sombr (confidence: 0.70)
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/michigander
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/michigander
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/michigander
+INFO:collector.artist_researcher:✅ Completed research for Michigander (confidence: 0.30)
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:63952 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63954 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63954 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:63959 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63961 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63961 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/thepaperkites
+INFO:collector.artist_researcher:✅ Completed research for The Paper Kites (confidence: 0.20)
+INFO:collector.artist_researcher:🔍 Researching artist: Deafheaven
+INFO:collector.artist_researcher:🔍 Researching artist: The Faint
+INFO:collector.artist_researcher:🔍 Researching artist: Between the Buried and Me & Hail The Sun
+INFO:collector.artist_researcher:🔍 Researching artist: Now That’s What I Call A Rave
+INFO:collector.artist_researcher:🔍 Researching artist: The Bends
+INFO:collector.artist_researcher:🌐 Found official website: https://www.thefaint.com
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/thefaint
+INFO:collector.artist_researcher:🌐 Found official website: https://deafheaven.com
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/deafheaven
+INFO:     127.0.0.1:63961 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:63995 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/thefaint
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/deafheaven
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/deafheaven
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/thefaint
+INFO:collector.artist_researcher:✅ Completed research for Deafheaven (confidence: 0.80)
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/thefaint
+INFO:collector.artist_researcher:✅ Completed research for The Faint (confidence: 0.80)
+INFO:     127.0.0.1:63995 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63995 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64001 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64001 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64001 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64007 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64007 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/thebends
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/thebends
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64028 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64030 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/thebends
+INFO:collector.artist_researcher:✅ Completed research for The Bends (confidence: 0.30)
+INFO:     127.0.0.1:64030 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64030 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64049 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/betweentheburiedandme&hailthesun
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/nowthat’swhaticallarave
+INFO:     127.0.0.1:64049 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for Between the Buried and Me & Hail The Sun (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for Now That’s What I Call A Rave (confidence: 0.20)
+INFO:collector.artist_researcher:🔍 Researching artist: Psychic Mirrors
+INFO:collector.artist_researcher:🔍 Researching artist: The Taylor Party: Taylor Night
+INFO:collector.artist_researcher:🔍 Researching artist: THE BRIDGE CITY SINNERS
+INFO:collector.artist_researcher:🔍 Researching artist: A Lot Like Birds
+INFO:collector.artist_researcher:🔍 Researching artist: MF Metal Night
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/thetaylorparty:taylornight
+INFO:collector.artist_researcher:🌐 Found official website: https://alotlikebirds.com
+INFO:     127.0.0.1:64049 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64086 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for The Taylor Party: Taylor Night (confidence: 0.20)
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/alotlikebirds
+INFO:collector.artist_researcher:✅ Completed research for A Lot Like Birds (confidence: 0.70)
+INFO:     127.0.0.1:64086 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64100 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64102 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64102 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64102 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64106 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/psychicmirrors
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/psychicmirrors
+INFO:     127.0.0.1:64106 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for Psychic Mirrors (confidence: 0.20)
+INFO:     127.0.0.1:64106 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64131 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64131 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64131 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64140 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/mfmetalnight
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/thebridgecitysinners
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/thebridgecitysinners
+INFO:     127.0.0.1:64140 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for THE BRIDGE CITY SINNERS (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for MF Metal Night (confidence: 0.30)
+INFO:collector.artist_researcher:🔍 Researching artist: HEX APPEAL: A Halloween Circus Show & Party
+INFO:collector.artist_researcher:🔍 Researching artist: Colony House
+INFO:collector.artist_researcher:🔍 Researching artist: Anella
+INFO:collector.artist_researcher:🔍 Researching artist: Yoke Lore
+INFO:collector.artist_researcher:🔍 Researching artist: Dogpark
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/hexappeal:ahalloweencircusshow&party
+INFO:collector.artist_researcher:🌐 Found official website: https://www.yokelore.com
+INFO:collector.artist_researcher:🌐 Found official website: https://www.anella.com
+INFO:collector.artist_researcher:🌐 Found official website: https://www.colonyhouse.com
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/yokelore
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/colony.house
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/colonyhouse
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/yokelore
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/anella
+INFO:collector.artist_researcher:✅ Completed research for HEX APPEAL: A Halloween Circus Show & Party (confidence: 0.20)
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/colonyhouse
+INFO:     127.0.0.1:64140 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64201 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/anella
+INFO:collector.artist_researcher:✅ Completed research for Yoke Lore (confidence: 0.70)
+INFO:collector.artist_researcher:✅ Completed research for Anella (confidence: 0.80)
+INFO:collector.artist_researcher:✅ Completed research for Colony House (confidence: 0.80)
+INFO:     127.0.0.1:64201 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/dogpark
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/dogpark
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/dogpark
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/dogpark
+INFO:collector.artist_researcher:✅ Completed research for Dogpark (confidence: 0.30)
+INFO:collector.artist_researcher:🔍 Researching artist: Young Gun Silver Fox
+INFO:collector.artist_researcher:🔍 Researching artist: Iam Tongi
+INFO:collector.artist_researcher:🔍 Researching artist: MATISYAHU
+INFO:collector.artist_researcher:🔍 Researching artist: Silent Planet & Invent Animate
+INFO:collector.artist_researcher:🔍 Researching artist: Scorey
+INFO:collector.artist_researcher:🌐 Found official website: https://www.iamtongi.com
+INFO:collector.artist_researcher:🌐 Found official website: https://www.matisyahu.com
+INFO:collector.artist_researcher:🌐 Found official website: https://www.younggunsilverfox.com
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/iamtongi
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/matisyahu
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/younggunsilverfox
+INFO:     127.0.0.1:64201 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64229 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/iamtongi
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/iamtongi
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/matisyahu
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/younggunsilverfox
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/younggunsilverfox
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/matisyahu
+INFO:collector.artist_researcher:✅ Completed research for Iam Tongi (confidence: 0.70)
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/matisyahu
+INFO:collector.artist_researcher:✅ Completed research for MATISYAHU (confidence: 0.80)
+INFO:collector.artist_researcher:✅ Completed research for Young Gun Silver Fox (confidence: 0.80)
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/scorey
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/scorey
+INFO:     127.0.0.1:64229 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/scorey
+INFO:collector.artist_researcher:✅ Completed research for Scorey (confidence: 0.30)
+INFO:     127.0.0.1:64229 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64246 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64246 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64252 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64254 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64254 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64254 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64260 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/silentplanet&inventanimate
+INFO:collector.artist_researcher:✅ Completed research for Silent Planet & Invent Animate (confidence: 0.20)
+INFO:     127.0.0.1:64260 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:🔍 Researching artist: DirtySnatcha
+INFO:collector.artist_researcher:🔍 Researching artist: HIRIE
+INFO:collector.artist_researcher:🔍 Researching artist: SOFIA ISELLA
+INFO:collector.artist_researcher:🔍 Researching artist: Sun Room
+INFO:collector.artist_researcher:🔍 Researching artist: Nicotine Dolls
+INFO:collector.artist_researcher:🌐 Found official website: https://www.sofiaisella.com
+INFO:collector.artist_researcher:🌐 Found official website: https://www.dirtysnatcha.com
+INFO:collector.artist_researcher:🌐 Found official website: https://www.sunroom.com
+INFO:collector.artist_researcher:🌐 Found official website: https://nicotinedolls.com
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/dirtysnatcha
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/sunroom
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/sofia.isella
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/dirtysnatcha
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/nicotinedolls
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/hirie
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/dirtysnatcha
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/sofiaisella
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/sunroom
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/nicotinedolls
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/sunroom
+INFO:collector.artist_researcher:✅ Completed research for Sun Room (confidence: 0.80)
+INFO:collector.artist_researcher:✅ Completed research for DirtySnatcha (confidence: 0.80)
+INFO:collector.artist_researcher:✅ Completed research for SOFIA ISELLA (confidence: 0.70)
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64334 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64336 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:✅ Completed research for Nicotine Dolls (confidence: 0.70)
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/hirie
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/hirie
+INFO:collector.artist_researcher:✅ Completed research for HIRIE (confidence: 0.20)
+INFO:collector.artist_researcher:🔍 Researching artist: Pouya
+INFO:collector.artist_researcher:🔍 Researching artist: bktherula
+INFO:collector.artist_researcher:🔍 Researching artist: The Wrecks
+INFO:collector.artist_researcher:🔍 Researching artist: New Constellations
+INFO:collector.artist_researcher:🔍 Researching artist: Murder By Death
+INFO:collector.artist_researcher:🌐 Found official website: https://www.bktherula.com
+INFO:collector.artist_researcher:🌐 Found official website: https://thewrecks.com
+INFO:collector.artist_researcher:🌐 Found official website: https://murderbydeath.com
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/thewrecks
+INFO:     127.0.0.1:64336 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/bktherula
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/murderbydeath
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/bktherula
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/thewrecks
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/murderbydeath
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/murderbydeath
+INFO:collector.artist_researcher:✅ Completed research for Murder By Death (confidence: 0.80)
+INFO:collector.artist_researcher:✅ Completed research for bktherula (confidence: 0.70)
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/thewrecks
+INFO:collector.artist_researcher:✅ Completed research for The Wrecks (confidence: 0.80)
+INFO:     127.0.0.1:64336 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64368 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64368 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64368 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64374 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64374 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/new.constellations
+INFO:collector.artist_researcher:🌐 Found official website: https://www.pouya.net
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/pouya
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/newconstellations
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/newconstellations
+INFO:collector.artist_researcher:✅ Completed research for New Constellations (confidence: 0.20)
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/pouya
+INFO:     127.0.0.1:64406 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64407 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/pouya
+INFO:collector.artist_researcher:✅ Completed research for Pouya (confidence: 0.80)
+INFO:collector.artist_researcher:🔍 Researching artist: Cameron Whitcomb
+INFO:collector.artist_researcher:🔍 Researching artist: ATREYU
+INFO:collector.artist_researcher:🔍 Researching artist: Bit Brigade & Galactic Empire
+INFO:collector.artist_researcher:🔍 Researching artist: ROME (Formerly of Sublime with Rome)
+INFO:collector.artist_researcher:🔍 Researching artist: Winter Solstice Ball
+INFO:collector.artist_researcher:🌐 Found official website: https://atreyu.com
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/atreyu
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/atreyu
+INFO:     127.0.0.1:64407 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found bandcamp: https://bandcamp.com/atreyu
+INFO:collector.artist_researcher:✅ Completed research for ATREYU (confidence: 0.80)
+INFO:     127.0.0.1:64407 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64423 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64423 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64423 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64433 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/cameron.whitcomb
+INFO:     127.0.0.1:64433 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found youtube: https://www.youtube.com/cameronwhitcomb
+INFO:collector.artist_researcher:📱 Found soundcloud: https://soundcloud.com/cameronwhitcomb
+INFO:collector.artist_researcher:✅ Completed research for Cameron Whitcomb (confidence: 0.20)
+INFO:     127.0.0.1:64433 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64457 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64457 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64457 - "GET /api/status HTTP/1.1" 200 OK
+INFO:__main__:Getting database stats...
+INFO:__main__:Database URL set
+INFO:__main__:Database connection established
+INFO:__main__:Venues count: 2
+INFO:__main__:Events count: 464
+INFO:__main__:Artists count: 55
+INFO:__main__:Sources count: 14
+INFO:__main__:Database connection closed
+INFO:__main__:Returning stats: {'total_venues': 2, 'total_events': 464, 'total_artists': 55, 'total_sources': 14}
+INFO:     127.0.0.1:64468 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64468 - "GET /api/status HTTP/1.1" 200 OK
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/rome(formerlyofsublimewithrome)
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/wintersolsticeball
+INFO:collector.artist_researcher:📱 Found facebook: https://www.facebook.com/bitbrigade&galacticempire
+INFO:collector.artist_researcher:✅ Completed research for Winter Solstice Ball (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for ROME (Formerly of Sublime with Rome) (confidence: 0.20)
+INFO:collector.artist_researcher:✅ Completed research for Bit Brigade & Galactic Empire (confidence: 0.20)
+INFO:collector.intelligent_crawler:💾 Stored artist: The Casualties (ID: 56)
+INFO:collector.intelligent_crawler:💾 Stored artist: Truckfighters (ID: 57)
+INFO:collector.intelligent_crawler:💾 Stored artist: Wade Bowen (ID: 58)
+INFO:collector.intelligent_crawler:💾 Stored artist: Bradeazy (ID: 59)
+INFO:collector.intelligent_crawler:💾 Stored artist: Gimme Gimme Disco (ID: 60)
+INFO:collector.intelligent_crawler:💾 Stored artist: Ordinary Boys (ID: 61)
+INFO:collector.intelligent_crawler:💾 Stored artist: Angelo The Kid (ID: 62)
+INFO:collector.intelligent_crawler:💾 Stored artist: Nick Hexum of 311 (ID: 63)
+INFO:collector.intelligent_crawler:💾 Stored artist: Boldy James (ID: 64)
+INFO:collector.intelligent_crawler:💾 Stored artist: Say Anything: Is a Real Boy (ID: 65)
+INFO:collector.intelligent_crawler:💾 Stored artist: DEBÍ TIRAR MÁS FIESTAS (ID: 66)
+INFO:collector.intelligent_crawler:💾 Stored artist: WORK IT! 90s/2000s R&B And Hip Hop Night! (ID: 67)
+INFO:collector.intelligent_crawler:💾 Stored artist: Superheaven (ID: 68)
+INFO:collector.intelligent_crawler:💾 Stored artist: Allen Stone (ID: 69)
+INFO:collector.intelligent_crawler:💾 Stored artist: K Camp (ID: 70)
+INFO:collector.intelligent_crawler:💾 Stored artist: Michigander (ID: 71)
+INFO:collector.intelligent_crawler:💾 Stored artist: The Paper Kites (ID: 72)
+INFO:collector.intelligent_crawler:💾 Stored artist: Crossed Lovers: Signs from the Zodiac (ID: 73)
+INFO:collector.intelligent_crawler:💾 Stored artist: sombr (ID: 74)
+INFO:collector.intelligent_crawler:💾 Stored artist: Mannequin Pussy (ID: 75)
+INFO:collector.intelligent_crawler:💾 Stored artist: Deafheaven (ID: 76)
+INFO:collector.intelligent_crawler:💾 Stored artist: The Faint (ID: 77)
+INFO:collector.intelligent_crawler:💾 Stored artist: Between the Buried and Me & Hail The Sun (ID: 78)
+INFO:collector.intelligent_crawler:💾 Stored artist: Now That’s What I Call A Rave (ID: 79)
+INFO:collector.intelligent_crawler:💾 Stored artist: The Bends (ID: 80)
+INFO:collector.intelligent_crawler:💾 Stored artist: Psychic Mirrors (ID: 81)
+INFO:collector.intelligent_crawler:💾 Stored artist: The Taylor Party: Taylor Night (ID: 82)
+INFO:collector.intelligent_crawler:💾 Stored artist: THE BRIDGE CITY SINNERS (ID: 83)
+INFO:collector.intelligent_crawler:💾 Stored artist: A Lot Like Birds (ID: 84)
+INFO:collector.intelligent_crawler:💾 Stored artist: MF Metal Night (ID: 85)
+INFO:collector.intelligent_crawler:💾 Stored artist: HEX APPEAL: A Halloween Circus Show & Party (ID: 86)
+INFO:collector.intelligent_crawler:💾 Stored artist: Colony House (ID: 87)
+INFO:collector.intelligent_crawler:💾 Stored artist: Anella (ID: 88)
+INFO:collector.intelligent_crawler:💾 Stored artist: Yoke Lore (ID: 89)
+INFO:collector.intelligent_crawler:💾 Stored artist: Dogpark (ID: 90)
+INFO:collector.intelligent_crawler:💾 Stored artist: Young Gun Silver Fox (ID: 91)
+INFO:collector.intelligent_crawler:💾 Stored artist: Iam Tongi (ID: 92)
+INFO:collector.intelligent_crawler:💾 Stored artist: MATISYAHU (ID: 93)
+INFO:collector.intelligent_crawler:💾 Stored artist: Silent Planet & Invent Animate (ID: 94)
+INFO:collector.intelligent_crawler:💾 Stored artist: Scorey (ID: 95)
+INFO:collector.intelligent_crawler:💾 Stored artist: DirtySnatcha (ID: 96)
+INFO:collector.intelligent_crawler:💾 Stored artist: HIRIE (ID: 97)
+INFO:collector.intelligent_crawler:💾 Stored artist: SOFIA ISELLA (ID: 98)
+INFO:collector.intelligent_crawler:💾 Stored artist: Sun Room (ID: 99)
+INFO:collector.intelligent_crawler:💾 Stored artist: Nicotine Dolls (ID: 100)
+INFO:collector.intelligent_crawler:💾 Stored artist: Pouya (ID: 101)
+INFO:collector.intelligent_crawler:💾 Stored artist: bktherula (ID: 102)
+INFO:collector.intelligent_crawler:💾 Stored artist: The Wrecks (ID: 103)
+INFO:collector.intelligent_crawler:💾 Stored artist: New Constellations (ID: 104)
+INFO:collector.intelligent_crawler:💾 Stored artist: Murder By Death (ID: 105)

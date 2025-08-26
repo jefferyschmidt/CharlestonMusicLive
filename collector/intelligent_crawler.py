@@ -18,6 +18,9 @@ from .extractors.factory import ExtractorFactory, ExtractorMatch
 from .extractors.base import ExtractResult
 from .crawlers.factory import CrawlerFactory, CrawlerType
 from .artist_researcher import ArtistResearcher
+from .config import get_config_for_domain, get_global_config
+from .error_handler import ErrorHandler, CrawlError
+from storage.r2_client import R2Client, LocalS3Client
 from db.persistence import (
     get_connection, ensure_site, ensure_source, upsert_venue, 
     insert_event_instance, upsert_event_source_link
@@ -85,6 +88,13 @@ class IntelligentCrawler:
         
         # Artist research
         self.artist_researcher: Optional[ArtistResearcher] = None
+        
+        # Error handling and rate limiting
+        self.error_handler = ErrorHandler()
+        self.global_config = get_global_config()
+        
+        # Storage for raw artifacts
+        self.storage_client = self._init_storage_client()
     
     async def __aenter__(self):
         """Async context manager entry."""
@@ -96,6 +106,72 @@ class IntelligentCrawler:
         await self.artist_researcher.__aenter__()
         
         return self
+    
+    def _init_storage_client(self):
+        """Initialize storage client for raw artifacts."""
+        try:
+            # Try to use R2 if credentials are available
+            if all([
+                os.getenv("R2_ACCOUNT_ID"),
+                os.getenv("R2_ACCESS_KEY_ID"),
+                os.getenv("R2_SECRET_ACCESS_KEY"),
+                os.getenv("R2_BUCKET_NAME")
+            ]):
+                logger.info("Using Cloudflare R2 for artifact storage")
+                return R2Client()
+            else:
+                logger.info("Using local storage for artifacts (R2 credentials not available)")
+                return LocalS3Client()
+        except Exception as e:
+            logger.warning(f"Failed to initialize R2 client, falling back to local storage: {e}")
+            return LocalS3Client()
+    
+    def _validate_events(self, events: List[ExtractResult]) -> List[ExtractResult]:
+        """Validate and clean extracted events."""
+        validated_events = []
+        
+        for event in events:
+            try:
+                # Basic validation
+                if not event.title or len(event.title.strip()) < 3:
+                    logger.warning(f"Skipping event with invalid title: {event.title}")
+                    continue
+                
+                if not event.venue_name or len(event.venue_name.strip()) < 2:
+                    logger.warning(f"Skipping event with invalid venue: {event.venue_name}")
+                    continue
+                
+                if not event.starts_at_utc:
+                    logger.warning(f"Skipping event without start time: {event.title}")
+                    continue
+                
+                # Clean and normalize data
+                event.title = event.title.strip()
+                event.venue_name = event.venue_name.strip()
+                if event.artist_name:
+                    event.artist_name = event.artist_name.strip()
+                
+                # Validate price ranges
+                if event.price_min and event.price_max:
+                    if event.price_min > event.price_max:
+                        # Swap if min > max
+                        event.price_min, event.price_max = event.price_max, event.price_min
+                
+                # Validate dates
+                if event.ends_at_utc and event.starts_at_utc:
+                    if event.ends_at_utc <= event.starts_at_utc:
+                        # Set end time to start time + 2 hours if invalid
+                        from datetime import timedelta
+                        event.ends_at_utc = event.starts_at_utc + timedelta(hours=2)
+                
+                validated_events.append(event)
+                
+            except Exception as e:
+                logger.error(f"Error validating event {event.title}: {e}")
+                continue
+        
+        logger.info(f"Validated {len(validated_events)}/{len(events)} events")
+        return validated_events
     
     async def __aexit__(self, exc_type, exc_val, exc_tb):
         """Async context manager exit."""
@@ -204,12 +280,35 @@ class IntelligentCrawler:
                 
                 self.current_session.sources_crawled += 1
                 
-                # Rate limiting
+                # Rate limiting based on domain
+                from urllib.parse import urlparse
+                domain = urlparse(source.url).netloc
+                domain_config = get_config_for_domain(domain)
+                
+                # Check if source is blacklisted
+                if self.error_handler.is_source_blacklisted(source.url):
+                    logger.warning(f"Skipping blacklisted source: {source.url}")
+                    continue
+                
+                # Apply rate limiting
                 if i < len(sources) - 1:  # Don't delay after the last source
-                    await asyncio.sleep(self.rate_limit_delay)
+                    delay = domain_config.get('min_delay_between_requests', self.global_config['min_delay_between_requests'])
+                    await asyncio.sleep(delay)
                 
             except Exception as e:
                 logger.error(f"Error crawling source {source.url}: {e}")
+                
+                # Handle error through error handler
+                error = CrawlError(
+                    error_type="crawl_error",
+                    message=str(e),
+                    source_url=source.url,
+                    timestamp=datetime.now()
+                )
+                
+                recovery_action = self.error_handler.handle_error(error)
+                logger.info(f"Recovery action: {recovery_action['action']} - {recovery_action['message']}")
+                
                 # Create a failed crawl result
                 failed_result = CrawlResult(
                     source_url=source.url,
@@ -237,6 +336,43 @@ class IntelligentCrawler:
                     raise Exception(f"Failed to fetch {source.url}: HTTP {response.status}")
                 
                 html_content = await response.text()
+                
+                # Store raw HTML artifact
+                try:
+                    from io import BytesIO
+                    from urllib.parse import urlparse
+                    
+                    domain = urlparse(source.url).netloc
+                    timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+                    artifact_key = f"artifacts/{domain}/{timestamp}_{hash(source.url) % 10000}.html"
+                    
+                    # Convert HTML to bytes
+                    html_bytes = BytesIO(html_content.encode('utf-8'))
+                    
+                    # Store with metadata
+                    metadata = {
+                        'source_url': source.url,
+                        'venue_name': source.venue_name,
+                        'source_type': source.source_type,
+                        'crawled_at': timestamp,
+                        'content_type': 'text/html'
+                    }
+                    
+                    success = self.storage_client.upload_artifact(
+                        artifact_key, 
+                        html_bytes, 
+                        content_type='text/html',
+                        metadata=metadata
+                    )
+                    
+                    if success:
+                        logger.info(f"Stored raw HTML artifact: {artifact_key}")
+                    else:
+                        logger.warning(f"Failed to store raw HTML artifact: {artifact_key}")
+                        
+                except Exception as e:
+                    logger.warning(f"Failed to store artifact: {e}")
+                    # Don't fail the crawl if artifact storage fails
             
             # Analyze the page and choose extractor
             extractor_match = self.extractor_factory.analyze_source(
@@ -260,8 +396,11 @@ class IntelligentCrawler:
             if events and self.artist_researcher:
                 await self._research_artists_from_events(events)
             
+            # Validate and clean events
+            validated_events = self._validate_events(events)
+            
             # Store events in database
-            stored_events = await self._store_events_from_source(source, events)
+            stored_events = await self._store_events_from_source(source, validated_events)
             
             crawl_duration = time.time() - start_time
             
