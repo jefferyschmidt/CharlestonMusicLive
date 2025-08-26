@@ -1,0 +1,98 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+env:
+  PYTHON_VERSION: "3.11"
+  FLYCTL_INSTALL: "https://fly.io/install.sh"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.11]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install Poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python3 -
+        echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+    - name: Cache Poetry dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pypoetry
+        key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-poetry-
+
+    - name: Install dependencies
+      run: poetry install --no-root
+
+    - name: Run linting
+      run: |
+        poetry run ruff check .
+        poetry run black --check .
+
+    - name: Run tests
+      run: poetry run pytest tests/ --cov=collector --cov=api --cov-report=xml
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: false
+
+  database-migration:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install Flyway
+      run: |
+        wget -qO- https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/9.22.3/flyway-commandline-9.22.3-linux-x64.tar.gz | tar xvz
+        echo "$PWD/flyway-9.22.3" >> $GITHUB_PATH
+
+    - name: Run Flyway migrations on test database
+      env:
+        DATABASE_URL: ${{ secrets.TEST_DATABASE_URL }}
+        DATABASE_USER: ${{ secrets.TEST_DATABASE_USER }}
+        DATABASE_PASSWORD: ${{ secrets.TEST_DATABASE_PASSWORD }}
+      run: |
+        flyway -url="$DATABASE_URL" -user="$DATABASE_USER" -password="$DATABASE_PASSWORD" migrate
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [test, database-migration]
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install Flyctl
+      run: |
+        curl -L "$FLYCTL_INSTALL" | sh
+        echo "$HOME/.fly/bin" >> $GITHUB_PATH
+
+    - name: Deploy to Fly.io
+      env:
+        FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+      run: |
+        flyctl deploy --remote-only

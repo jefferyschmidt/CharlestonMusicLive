@@ -1,0 +1,21 @@
+[
+  {
+    "site_slug": "charleston",
+    "venue_name": "Sample Venue",
+    "title": "Sample Artist Live",
+    "artist_name": "Sample Artist Live",
+    "starts_at_utc": "2025-10-05T00:00:00Z",
+    "ends_at_utc": null,
+    "tz_name": "America/New_York",
+    "doors_time_utc": null,
+    "price_min": 20.0,
+    "price_max": 35.0,
+    "currency": "USD",
+    "ticket_url": "https://tickets.example.com/abc123",
+    "age_restriction": "21+",
+    "is_cancelled": false,
+    "source_url": "https://example.com/sample-venue/events",
+    "external_id": "abc123",
+    "raw_data_present": true
+  }
+]
