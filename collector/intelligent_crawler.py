@@ -17,6 +17,7 @@ from .discovery.source_discoverer import SourceDiscoverer, DiscoveredSource, Dis
 from .extractors.factory import ExtractorFactory, ExtractorMatch
 from .extractors.base import ExtractResult
 from .crawlers.factory import CrawlerFactory, CrawlerType
+from .artist_researcher import ArtistResearcher
 from db.persistence import (
     get_connection, ensure_site, ensure_source, upsert_venue, 
     insert_event_instance, upsert_event_source_link
@@ -81,17 +82,27 @@ class IntelligentCrawler:
         self.successful_patterns: Dict[str, Any] = {}
         self.failed_patterns: Dict[str, Any] = {}
         self.venue_extractor_mapping: Dict[str, str] = {}
+        
+        # Artist research
+        self.artist_researcher: Optional[ArtistResearcher] = None
     
     async def __aenter__(self):
         """Async context manager entry."""
         self.discoverer = SourceDiscoverer(self.site_slug, self.city, self.state)
         await self.discoverer.__aenter__()
+        
+        # Initialize artist researcher
+        self.artist_researcher = ArtistResearcher()
+        await self.artist_researcher.__aenter__()
+        
         return self
     
     async def __aexit__(self, exc_type, exc_val, exc_tb):
         """Async context manager exit."""
         if self.discoverer:
             await self.discoverer.__aexit__(exc_type, exc_val, exc_tb)
+        if self.artist_researcher:
+            await self.artist_researcher.__aexit__(exc_type, exc_val, exc_tb)
     
     async def run_full_crawl(self) -> CrawlSession:
         """Run a complete crawling session from discovery to extraction."""
@@ -111,6 +122,10 @@ class IntelligentCrawler:
             self.current_session.sources_discovered = len(discovery_result.sources)
             
             logger.info(f"Discovered {len(discovery_result.sources)} potential sources")
+            
+            # Store discovered sources in database for future reference
+            logger.info("Storing discovered sources in database...")
+            await self._store_discovered_sources(discovery_result.sources)
             
             # Phase 2: Filter and prioritize sources
             logger.info("Phase 2: Filtering and prioritizing sources...")
@@ -241,6 +256,10 @@ class IntelligentCrawler:
             # Extract events
             events = extractor.parse(html_content)
             
+            # Research artists from events
+            if events and self.artist_researcher:
+                await self._research_artists_from_events(events)
+            
             # Store events in database
             stored_events = await self._store_events_from_source(source, events)
             
@@ -345,7 +364,9 @@ class IntelligentCrawler:
                             # Upsert event source link
                             link_id = upsert_event_source_link(
                                 conn, event_id, source_id, ingest_run_id,
-                                event.external_id, event.source_url, event.raw_data
+                                external_id=event.external_id, 
+                                source_url=event.source_url, 
+                                raw_data=event.raw_data
                             )
                             
                             stored_event_ids.append(event_id)
@@ -376,6 +397,146 @@ class IntelligentCrawler:
                 conn.close()
         
         return stored_event_ids
+    
+    async def _research_artists_from_events(self, events: List[ExtractResult]):
+        """Research artists discovered from events."""
+        try:
+            # Extract unique artist names from events
+            artist_names = []
+            event_contexts = []
+            
+            for event in events:
+                if event.artist_name and event.artist_name not in artist_names:
+                    artist_names.append(event.artist_name)
+                    event_contexts.append({
+                        'venue_name': event.venue_name,
+                        'title': event.title,
+                        'source_url': event.source_url
+                    })
+            
+            if not artist_names:
+                return
+            
+            logger.info(f"🎵 Researching {len(artist_names)} artists from events")
+            
+            # Research artists in parallel
+            artist_infos = await self.artist_researcher.batch_research_artists(artist_names, event_contexts)
+            
+            # Store artist information in database
+            await self._store_artist_information(artist_infos)
+            
+            logger.info(f"✅ Completed research for {len(artist_infos)} artists")
+            
+        except Exception as e:
+            logger.error(f"Error researching artists: {e}")
+    
+    async def _store_artist_information(self, artist_infos: List[Any]):
+        """Store artist information in the database."""
+        try:
+            conn = get_connection()
+            
+            with conn.cursor() as cur:
+                # Start transaction
+                cur.execute("BEGIN")
+                
+                try:
+                    site_id = ensure_site(conn, self.site_slug)
+                    
+                    for artist_info in artist_infos:
+                        try:
+                            # Insert or update artist
+                            cur.execute(
+                                """
+                                INSERT INTO artist (site_id, name, bio, genre_tags, hometown, 
+                                                   active_years, official_website, social_media, 
+                                                   primary_photo_url, confidence_score, 
+                                                   research_status, discovered_at, last_researched_at)
+                                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                                ON CONFLICT (site_id, name) 
+                                DO UPDATE SET
+                                    bio = EXCLUDED.bio,
+                                    genre_tags = EXCLUDED.genre_tags,
+                                    hometown = EXCLUDED.hometown,
+                                    active_years = EXCLUDED.active_years,
+                                    official_website = EXCLUDED.official_website,
+                                    social_media = EXCLUDED.social_media,
+                                    primary_photo_url = EXCLUDED.primary_photo_url,
+                                    confidence_score = EXCLUDED.confidence_score,
+                                    research_status = EXCLUDED.research_status,
+                                    last_researched_at = EXCLUDED.last_researched_at
+                                RETURNING id
+                                """,
+                                (site_id, artist_info.name, artist_info.bio, artist_info.genre_tags,
+                                 artist_info.hometown, artist_info.active_years, artist_info.official_website,
+                                 json.dumps(artist_info.social_media), artist_info.primary_photo_url,
+                                 artist_info.confidence_score, artist_info.research_status,
+                                 artist_info.discovered_at, artist_info.last_researched_at)
+                            )
+                            
+                            artist_id = cur.fetchone()[0]
+                            logger.info(f"💾 Stored artist: {artist_info.name} (ID: {artist_id})")
+                            
+                        except Exception as e:
+                            logger.error(f"Error storing artist {artist_info.name}: {e}")
+                            continue
+                    
+                    # Commit transaction
+                    cur.execute("COMMIT")
+                    
+                except Exception as e:
+                    # Rollback on error
+                    cur.execute("ROLLBACK")
+                    raise
+                    
+        except Exception as e:
+            logger.error(f"Error storing artist information: {e}")
+            raise
+        finally:
+            if 'conn' in locals():
+                conn.close()
+    
+    async def _store_discovered_sources(self, sources: List[DiscoveredSource]):
+        """Store discovered sources in the database."""
+        if not sources:
+            return
+        
+        try:
+            conn = get_connection()
+            
+            with conn.cursor() as cur:
+                # Start transaction
+                cur.execute("BEGIN")
+                
+                try:
+                    site_id = ensure_site(conn, self.site_slug)
+                    
+                    for source in sources:
+                        try:
+                            # Upsert source
+                            source_id = ensure_source(
+                                conn, site_id, source.name, source.url,
+                                requires_browser=source.requires_browser,
+                                rate_limit_rps=source.rate_limit_rps
+                            )
+                            logger.info(f"Stored source: {source.name} ({source.url})")
+                        except Exception as e:
+                            logger.error(f"Error storing source {source.url}: {e}")
+                            continue
+                    
+                    # Commit transaction
+                    cur.execute("COMMIT")
+                    
+                except Exception as e:
+                    # Rollback on error
+                    cur.execute("ROLLBACK")
+                    raise
+                    
+        except Exception as e:
+            logger.error(f"Error storing discovered sources: {e}")
+            raise
+        finally:
+            if 'conn' in locals():
+                conn.close()
     
     async def _store_crawl_results(self):
         """Store crawl session results in database for analysis."""

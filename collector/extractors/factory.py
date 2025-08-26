@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 
 from .base import Extractor, ExtractResult
 from .sample_venue import SampleVenueExtractor
-from .music_farm import MusicFarmExtractor
+from .adaptive_venue import AdaptiveVenueExtractor
 
 logger = logging.getLogger(__name__)
 
@@ -32,18 +32,8 @@ class ExtractorFactory:
     
     def __init__(self):
         # Available extractors with their characteristics
-        self.extractors = {
-            'sample_venue': {
-                'class': SampleVenueExtractor,
-                'patterns': ['sample', 'test', 'fixture'],
-                'confidence': 0.8
-            },
-            'music_farm': {
-                'class': MusicFarmExtractor,
-                'patterns': ['music farm', 'musicfarm'],
-                'confidence': 0.9
-            }
-        }
+        # For now, we only have the adaptive extractor
+        self.extractors = {}
         
         # Common venue patterns for generic extractors
         self.venue_patterns = {
@@ -198,9 +188,6 @@ class ExtractorFactory:
     
     def _create_generic_extractor(self, venue_type: str, url: str, metadata: Dict[str, Any]) -> ExtractorMatch:
         """Create a generic extractor based on venue type."""
-        # For now, use the sample venue extractor as a base
-        # In the future, we could create specialized generic extractors
-        
         configuration = {
             'venue_type': venue_type,
             'custom_selectors': self._generate_custom_selectors(venue_type),
@@ -209,9 +196,9 @@ class ExtractorFactory:
         }
         
         return ExtractorMatch(
-            extractor_class=SampleVenueExtractor,  # Use as base for now
-            confidence_score=0.6,
-            reasoning=f"Generic extractor for {venue_type} venue type",
+            extractor_class=AdaptiveVenueExtractor,  # Use the adaptive extractor
+            confidence_score=0.7,
+            reasoning=f"Adaptive extractor for {venue_type} venue type",
             configuration=configuration
         )
     
@@ -287,6 +274,7 @@ class ExtractorFactory:
     
     def create_extractor(self, match: ExtractorMatch, site_slug: str, source_url: str) -> Extractor:
         """Create an extractor instance based on the match."""
+        # Create the extractor
         extractor = match.extractor_class(site_slug=site_slug, source_url=source_url)
         
         # Apply custom configuration if available

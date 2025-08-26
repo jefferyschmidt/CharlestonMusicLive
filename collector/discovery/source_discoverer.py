@@ -106,6 +106,14 @@ class SourceDiscoverer:
             "acescharleston": {"name": "Aces", "keywords": ["aces", "acescharleston"]},
             "theroyalamerican": {"name": "The Royal American", "keywords": ["the royal american", "theroyalamerican"]}
         }
+        
+        # Blacklist for consistently failing sources
+        self.blacklisted_sources = {
+            'duckduckgo.com': 'Consistently times out and blocks automated requests',
+            'html.duckduckgo.com': 'HTML search endpoint is unreliable',
+            'google.com': 'Requires API key and has rate limits',
+            'bing.com': 'Requires API key and has rate limits'
+        }
     
     async def __aenter__(self):
         """Async context manager entry."""
@@ -258,31 +266,14 @@ class SourceDiscoverer:
         """Discover sources using search engine APIs."""
         sources = []
         
-        # Search terms for different types of sources
-        search_terms = [
-            f'"{self.city} {self.state}" "live music" "events calendar"',
-            f'"{self.city} {self.state}" "concert venue" "upcoming shows"',
-            f'"{self.city} {self.state}" "music venue" "tickets"',
-            f'"{self.city} {self.state}" "bar live music" "schedule"',
-            f'"{self.city} {self.state}" "restaurant live music" "events"'
-        ]
+        # Skip search engine discovery for now since DuckDuckGo is blacklisted
+        # and we don't have API keys for Google/Bing
+        logger.info("Skipping search engine discovery - all major engines are blacklisted or require API keys")
         
-        for term in search_terms:
-            try:
-                # Use DuckDuckGo (no API key required) or implement Google Custom Search
-                search_results = await self._search_duckduckgo(term, max_results=10)
-                
-                for result in search_results:
-                    source = await self._analyze_potential_source(result['url'], result['title'])
-                    if source and source.confidence_score > 0.3:
-                        sources.append(source)
-                        
-                        if len(sources) >= max_sources:
-                            break
-                            
-            except Exception as e:
-                logger.error(f"Error in search engine discovery: {e}")
-                continue
+        # In the future, we could implement:
+        # - Google Custom Search API (requires API key)
+        # - Bing Web Search API (requires API key)
+        # - Alternative search engines that are more bot-friendly
         
         return sources
     
@@ -376,6 +367,12 @@ class SourceDiscoverer:
     
     async def _analyze_potential_source(self, url: str, title: str) -> Optional[DiscoveredSource]:
         """Analyze a potential source to determine if it's an event source."""
+        # Check if source is blacklisted
+        if self._is_source_blacklisted(url):
+            reason = self._get_blacklist_reason(url)
+            logger.info(f"Skipping blacklisted source {url}: {reason}")
+            return None
+        
         try:
             # Quick check if URL is accessible
             async with self.session.get(url, timeout=10) as response:
@@ -661,6 +658,24 @@ class SourceDiscoverer:
                 
         except Exception:
             return False
+    
+    def _is_source_blacklisted(self, url: str) -> bool:
+        """Check if a source URL is in the blacklist."""
+        try:
+            parsed = urlparse(url)
+            domain = parsed.netloc.lower()
+            return domain in self.blacklisted_sources
+        except Exception:
+            return False
+    
+    def _get_blacklist_reason(self, url: str) -> Optional[str]:
+        """Get the reason why a source is blacklisted."""
+        try:
+            parsed = urlparse(url)
+            domain = parsed.netloc.lower()
+            return self.blacklisted_sources.get(domain)
+        except Exception:
+            return None
 
 
 async def discover_sources_for_site(site_slug: str, city: str, state: str, max_sources: int = 50) -> DiscoveryResult:
