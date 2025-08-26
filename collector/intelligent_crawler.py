@@ -16,6 +16,7 @@ import os
 from .discovery.source_discoverer import SourceDiscoverer, DiscoveredSource, DiscoveryResult
 from .extractors.factory import ExtractorFactory, ExtractorMatch
 from .extractors.base import ExtractResult
+from .crawlers.factory import CrawlerFactory, CrawlerType
 from db.persistence import (
     get_connection, ensure_site, ensure_source, upsert_venue, 
     insert_event_instance, upsert_event_source_link

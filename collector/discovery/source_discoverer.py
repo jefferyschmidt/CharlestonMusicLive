@@ -38,6 +38,7 @@ class DiscoveredSource:
     calendar_detected: bool = False
     requires_browser: bool = False
     rate_limit_rps: Optional[float] = None
+    priority_score: float = 0.0 # Added for priority scoring
 
 
 @dataclass
@@ -95,6 +96,16 @@ class SourceDiscoverer:
             'yellowpages.com',
             'chamberofcommerce.com'
         ]
+
+        # Charleston venue patterns for priority scoring
+        self.charleston_venue_patterns = {
+            "musicfarm": {"name": "Music Farm", "keywords": ["music farm", "musicfarm"]},
+            "pourhouse": {"name": "The Pour House", "keywords": ["pour house", "pourhouse"]},
+            "charlestonmusichall": {"name": "Charleston Music Hall", "keywords": ["charleston music hall", "charlestonmusichall"]},
+            "themillcharleston": {"name": "The Mill", "keywords": ["the mill", "themillcharleston"]},
+            "acescharleston": {"name": "Aces", "keywords": ["aces", "acescharleston"]},
+            "theroyalamerican": {"name": "The Royal American", "keywords": ["the royal american", "theroyalamerican"]}
+        }
     
     async def __aenter__(self):
         """Async context manager entry."""
@@ -117,32 +128,44 @@ class SourceDiscoverer:
         all_sources: Set[str] = set()
         discovered_sources: List[DiscoveredSource] = []
         
-        # Strategy 1: Search engine discovery
+        # Strategy 1: Direct venue discovery (highest priority)
+        logger.info("Starting direct venue discovery...")
+        direct_venue_sources = await self._discover_direct_venues(max_sources // 3)
+        for source in direct_venue_sources:
+            if source.url not in all_sources:
+                all_sources.add(source.url)
+                discovered_sources.append(source)
+        
+        # Strategy 2: Search engine discovery
         logger.info("Starting search engine discovery...")
-        search_sources = await self._discover_via_search_engines(max_sources // 2)
+        search_sources = await self._discover_via_search_engines(max_sources // 3)
         for source in search_sources:
             if source.url not in all_sources:
                 all_sources.add(source.url)
                 discovered_sources.append(source)
         
-        # Strategy 2: Known aggregator discovery
+        # Strategy 3: Known aggregator discovery
         logger.info("Starting aggregator discovery...")
-        aggregator_sources = await self._discover_via_aggregators(max_sources // 4)
+        aggregator_sources = await self._discover_via_aggregators(max_sources // 6)
         for source in aggregator_sources:
             if source.url not in all_sources:
                 all_sources.add(source.url)
                 discovered_sources.append(source)
         
-        # Strategy 3: Cross-reference discovery
+        # Strategy 4: Cross-reference discovery
         logger.info("Starting cross-reference discovery...")
-        cross_ref_sources = await self._discover_via_cross_references(discovered_sources, max_sources // 4)
+        cross_ref_sources = await self._discover_via_cross_references(discovered_sources, max_sources // 6)
         for source in cross_ref_sources:
             if source.url not in all_sources:
                 all_sources.add(source.url)
                 discovered_sources.append(source)
         
-        # Sort by confidence score
-        discovered_sources.sort(key=lambda x: x.confidence_score, reverse=True)
+        # Calculate priority scores and sort
+        for source in discovered_sources:
+            source.priority_score = self._calculate_priority_score(source)
+        
+        # Sort by priority score first, then confidence score
+        discovered_sources.sort(key=lambda x: (x.priority_score, x.confidence_score), reverse=True)
         
         execution_time = time.time() - start_time
         
@@ -153,6 +176,83 @@ class SourceDiscoverer:
             search_terms=[f"{self.city} live music", f"{self.city} concerts", f"{self.city} venues"],
             execution_time=execution_time
         )
+    
+    async def _discover_direct_venues(self, max_sources: int) -> List[DiscoveredSource]:
+        """Discover direct venue websites for Charleston."""
+        sources = []
+        
+        # Charleston-specific venue URLs to check directly
+        charleston_venues = [
+            "https://www.musicfarm.com",
+            "https://www.pourhouse.com",
+            "https://www.charlestonmusichall.com",
+            "https://www.themillcharleston.com",
+            "https://www.acescharleston.com",
+            "https://www.theroyalamerican.com"
+        ]
+        
+        for venue_url in charleston_venues:
+            try:
+                # Check if the venue has an events/calendar page
+                calendar_urls = [
+                    f"{venue_url}/events",
+                    f"{venue_url}/calendar",
+                    f"{venue_url}/shows",
+                    f"{venue_url}/schedule",
+                    f"{venue_url}/upcoming-events"
+                ]
+                
+                for calendar_url in calendar_urls:
+                    try:
+                        source = await self._analyze_potential_source(calendar_url, "Charleston Venue")
+                        if source and source.confidence_score > 0.5:
+                            # Boost priority for direct venues
+                            source.priority_score = 1.0
+                            source.source_type = 'venue'
+                            sources.append(source)
+                            break  # Found a working calendar page for this venue
+                            
+                    except Exception as e:
+                        logger.debug(f"Calendar page {calendar_url} not accessible: {e}")
+                        continue
+                        
+                if len(sources) >= max_sources:
+                    break
+                    
+            except Exception as e:
+                logger.error(f"Error discovering venue {venue_url}: {e}")
+                continue
+        
+        return sources
+    
+    def _calculate_priority_score(self, source: DiscoveredSource) -> float:
+        """Calculate priority score for a discovered source."""
+        base_score = source.confidence_score
+        
+        # Boost direct venues
+        if source.source_type == 'venue':
+            base_score += 0.3
+        
+        # Boost Charleston-specific venues
+        if self.site_slug == 'charleston':
+            for venue_info in self.charleston_venue_patterns.values():
+                if venue_info['name'].lower() in source.name.lower():
+                    base_score += 0.4
+                    break
+        
+        # Boost sources with calendars
+        if source.calendar_detected:
+            base_score += 0.2
+        
+        # Boost sources with high event counts
+        if source.event_count and source.event_count > 10:
+            base_score += 0.1
+        
+        # Penalize aggregators slightly (we want them but prioritize venues)
+        if source.source_type in ['aggregator', 'ticketing']:
+            base_score -= 0.1
+        
+        return min(base_score, 1.0)  # Cap at 1.0
     
     async def _discover_via_search_engines(self, max_sources: int) -> List[DiscoveredSource]:
         """Discover sources using search engine APIs."""
